@@ -1,0 +1,118 @@
+			@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:wght@300&display=swap');
+			
+			body {
+				font-family: Roboto, sans-serif;
+			}
+			
+			.container {
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+			}
+			
+			h3 {
+				font-family: Lato, sans-serif;
+			}
+			
+			/*-------------------------------------- First-level rows */
+			
+			
+			
+			/*-------------------------------------- text DIVs */
+			
+			.options {
+				text-align: center;
+			}
+			
+			.textareadiv {
+				display:flex;
+				justify-content: center;
+				align-items: center;
+			}			
+			
+			/*-------------------------------------- options DIVs */
+			
+			.options {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				font-size: 1.5rem;
+				border-left: 1px solid blue;
+			}
+			
+			.options > div {
+				display: flex;
+				align-items: center;
+				
+			}
+			
+			.options * {
+				margin: 5px auto;
+			}
+			
+			.right-al-label{
+				text-align: right;
+			}
+			
+			.row div:nth-child(2){
+				text-align: left;
+			}
+			
+			.button-alignment {
+				text-align: center;
+			}
+			
+			/*-------------------------------------- textareas */
+			textarea.border.form-control {
+				width: 85%;
+				min-height: 200px;
+			}
+			
+			/*------------------------------------- NN */
+			
+			.languages {
+				display: flex;
+				justify-content: space-around;
+				flex-direction: column;
+				color: white;
+			}
+			
+			.languages label:hover,  .languages input:hover{
+				text-shadow: 1px 1px 40px blue;
+			}
+			
+			/*---------------------------------END NN */
+			
+
+			@media (max-width: 768px) { 
+				.options {
+					border-left: 0;
+				}
+				.languages {
+					flex-direction: row;
+				}
+				
+				#buttonsSpSc {
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					text-align: center;
+				}
+
+				#buttonsSpSc li {
+					margin: 1rem auto;
+				}
+				
+				#langPrefs {
+					align-items: center;
+				}
+				
+				#langPrefs p {
+					margin: auto 0.5rem;
+				}
+			}
+			table, th, td, tr {
+			border: 1px solid black;
+			border-collapse: collapse;
+			text-align: center;
+			}

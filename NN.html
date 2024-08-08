@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Unified Launcher - Global v2.8</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="dependencies/bootstrap533.min.css" rel="stylesheet">
+		<link href="dependencies/style.css" rel="stylesheet">
+		<script src="dependencies/jquery371.min.js"></script>		
+		<script src="dependencies/bootstrap533.min.js"></script>
+		<script src="nnl.js"></script>
+	</head>
+	<body>
+		<ul class="nav nav-tabs justify-content-center border border-bottom">
+
+			<!-- --------------------- Negative News --------------------- -->
+			<li class="nav-item">
+				<a class="nav-link active" href="#nn_row" id="nn" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="#nn_row">
+					Negative News
+				</a>
+			</li>
+			<!-- --------------------- END OF NN FEATURE ----------------- -->
+
+			<li class="nav-item">
+				<!-- Button trigger modal -->
+				<button class="nav-link" type="button" data-bs-target="#modalPop" data-bs-toggle="modal">
+					How To
+				</button>
+			</li>
+		</ul>
+		
+		<div class="text-success">
+			<hr>
+		</div>
+		<div class="container">
+			
+			<!-- --------------------- Negative News --------------------- -->
+			<div class="row bg-info bg-gradient  pt-2 my-1 rounded-3 shadow" style="--bs-bg-opacity: .7;" id="nn_row">
+
+			 <div class="tlddiv">
+				<div class="row mb-2">
+					<div class="col-12 d-flex justify-content-center">
+						<h5>Select the TLD</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center">
+						<form id="tld-form">
+							<input type="radio" class="btn-check mx-2" name="tld-option" id="com-radio" value="com" autocomplete="off">
+							<label class="btn btn-outline-dark" for="com-radio">.COM</label>
+							<input type="radio" class="btn-check mx-2" name="tld-option" id="combr-radio" value="com.br" autocomplete="off" >
+							<label class="btn btn-outline-dark" for="combr-radio">.COM.BR</label>
+							<input type="radio" class="btn-check mx-2" name="tld-option" id="ie-radio" value="ie" autocomplete="off" checked>
+							<label class="btn btn-outline-dark" for="ie-radio">.IE</label>
+							<input type="radio" class="btn-check mx-2" name="tld-option" id="comhk-radio" value="com.hk" autocomplete="off">
+							<label class="btn btn-outline-dark" for="comhk-radio">.COM.HK</label>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+				<div id="langPrefs" class="col-sm-12 col-md-1 languages">
+					<p class="lead my-1">Template language</p>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="EN" id="en" checked>
+						<label class="form-check-label" for="en">
+						EN
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="FR" id="fr">
+						<label class="form-check-label" for="fr">
+						FR
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="DE" id="de">
+						<label class="form-check-label" for="de">
+						DE
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="ES" id="es">
+						<label class="form-check-label" for="es">
+						ES
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="PL" id="pl">
+						<label class="form-check-label" for="pl">
+						PL
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="IT" id="it">
+						<label class="form-check-label" for="it">
+						IT
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="SE" id="se">
+						<label class="form-check-label" for="se">
+						SE
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="NL" id="nl">
+						<label class="form-check-label" for="nl">
+						NL
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input p-1" name="options" type="checkbox" value="PT" id="pt">
+						<label class="form-check-label" for="pt">
+						PT
+						</label>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-11 my-1 p-3">
+					<form id="sus_form">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="nn_su">List of NPs</span>
+							<textarea type="text" name="sus_names" class="form-control" placeholder="Name Midname(s) Surname&#10;Name Midname(s) Surname" aria-label="sus_names" aria-describedby="nn_su"></textarea>
+							<button class="btn btn-outline-dark txtaFields" type="button" id="search_sus">Basic Search</button>
+							<button class="btn btn-outline-dark txtbFields" type="button" id="search_susa">Translated Search</button>
+						</div>
+					</form>
+					<form id="fi_form">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="nn_fi">List of LPs</span>
+							<textarea type="text" name="fi_names" class="form-control" placeholder="Biz name&#10;Biz name" aria-label="fi_names" aria-describedby="nn_fi"></textarea>
+							<button class="btn btn-outline-dark txtaFields" type="button" id="search_fi">Basic Search</button>
+							<button class="btn btn-outline-dark txtbFields" type="button" id="search_fia">Translated Search</button>
+						</div>
+					</form>	
+					
+					
+					<div class="row">
+								<div class="col-6 right-al-label">Autodetect language translation:</div>
+								<div class="col-6 form-check form-switch">
+								<input class="form-check-input" role="switch" type="checkbox" id="langdetect" name="options" value="langdetect">
+								<label class="form-check-label" for="langdetect"></label>
+								</div>
+								</div>
+								
+								
+					<ul id="buttonsSpSc" class="nav justify-content-center mb-2">
+						<li class="nav-item mx-3">
+							<button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#multiSurname" aria-expanded="false" aria-controls="multiSurname">Multiple Names/Surnames</button>
+						</li>
+						<li class="nav-item mx-3">
+							<button class="btn btn-lg  btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#cnSwap" aria-expanded="false" aria-controls="cnSwap">CN search</button>
+						</li>
+						<li class="nav-item mx-3">
+							<button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#esApellidos" aria-expanded="false" aria-controls="esApellidos">ES Apellidos</button>
+						</li>
+						<li class="nav-item mx-3">
+							<button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#ptSobrenomes" aria-expanded="false" aria-controls="ptSobrenomes">PT Sobrenomes</button>
+						</li>
+					</ul>
+					
+					
+						<!-- <div class="row">
+									<div class="col-6 right-al-label">Autodetect language translation:</div>
+									<div class="col-6 form-check form-switch">
+									<input class="form-check-input" role="switch" type="checkbox" id="langdetect" name="options" value="langdetect">
+									<label class="form-check-label" for="langdetect"></label>
+									</div>
+									</div>
+					 -->
+					<form id="specialSc">
+						<div id="multiSurname" class="input-group mb-3 collapse">
+							<span class="input-group-text" id="multiple_surnames">Multiple Names/Surnames</span>
+							<input type="text" name="name" class="form-control" placeholder="First Name(s)" aria-label="poc_name" aria-describedby="multiple_surnames">
+							<input type="text" name="midname" class="form-control" placeholder="Middle-names" aria-label="poc_midname" aria-describedby="multiple_surnames">
+							<input type="text" name="surname" class="form-control" placeholder="Surname(s)" aria-label="poc_surname" aria-describedby="multiple_surnames">
+							<button class="btn btn-outline-dark textFields" type="button" id="search_multiple_surnames">Basic Search</button>
+							<button class="btn btn-outline-dark textFields_t" type="button" id="search_multiple_surnames_t">Translated Search</button>
+						</div>
+					</form>
+					<form id="specialScCN">
+						<div id="cnSwap" class="input-group mb-3 collapse">
+							<span class="input-group-text" id="CN_swap">CN Name</span>
+						<!--	<textarea type="text" name="surname" class="form-control" placeholder="Surname&#10;Surname" aria-label="poc_surname" aria-describedby="CN_swap"></textarea>
+							<textarea type="text" name="name" class="form-control" placeholder="Name &#10;Name" aria-label="poc_name" aria-describedby="CN_swap"></textarea>  -->
+
+							<input type="text" name="surname" class="form-control" placeholder="Surname" aria-label="poc_surname" aria-describedby="CN_swap">
+							<input type="text" name="name" class="form-control" placeholder="Name" aria-label="poc_name" aria-describedby="CN_swap">
+							<button class="btn btn-outline-dark cn-search" type="button" id="search_CN_swap">Basic Search</button>
+							<button class="btn btn-outline-dark cn-search_t" type="button" id="search_CN_swap_t">Translated Search</button>
+						</div>
+					</form>
+					<form id="specialScES">
+						<div id="esApellidos" class="input-group mb-3 collapse">
+							<span class="input-group-text" id="ES_apellidos">ES Apellidos</span>
+							<input type="text" name="name" class="form-control" placeholder="Name(s)" aria-label="poc_name" aria-describedby="ES_apellidos">
+						<!--	<input type="text" name="midname" class="form-control" placeholder="Middle-names" aria-label="poc_midname" aria-describedby="ES_apellidos"> -->
+							<input type="text" name="surname1" class="form-control" placeholder="1st Apellido" aria-label="poc_surname" aria-describedby="ES_apellidos">
+							<input type="text" name="surname2" class="form-control" placeholder="2nd Apellido" aria-label="poc_surname" aria-describedby="ES_apellidos">
+							<button class="btn btn-outline-dark es-search" type="button" id="search_ES_apellidos">Basic Search</button>
+							<button class="btn btn-outline-dark es-search_t" type="button" id="search_ES_apellidos_t">Translated Search</button>
+						</div>
+					</form>
+					<form id="specialScPT">
+						<div id="ptSobrenomes" class="input-group mb-3 collapse">
+							<span class="input-group-text" id="PT_sobrenomes">PT Sobrenomes</span>
+							<input type="text" name="name" class="form-control" placeholder="Name(s)" aria-label="poc_name" aria-describedby="PT_sobrenomes">
+						<!--	<input type="text" name="midname" class="form-control" placeholder="Middle-names" aria-label="poc_midname" aria-describedby="PT_sobrenomes"> -->
+							<input type="text" name="ptsurname1" class="form-control" placeholder="1st Sobrenome" aria-label="poc_surname" aria-describedby="PT_sobrenomes">
+							<input type="text" name="ptsurname2" class="form-control" placeholder="2nd Sobrenome" aria-label="poc_surname" aria-describedby="PT_sobrenomes">
+							<button class="btn btn-outline-dark pt-search" type="button" id="search_PT_sobrenomes">Basic Search</button>
+							<button class="btn btn-outline-dark pt-search_t" type="button" id="search_PT_sobrenomes_t">Translated Search</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- --------------------- END OF NN FEATURE ----------------- -->
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="modalPop" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modalPopLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Good to know...</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="accordion" id="accordionGTK">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Preliminary Actions
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionGTK">
+								<div class="accordion-body">
+									<p><strong>Bookmarking:</strong> Having the tool saved locally and bookmarked in your browser is the best option</p>
+									<p><strong>Tabs not opening:</strong> If just one tab opens when you trigger the search, make sure to grant pop-up permissions to the launcher (look on the right of the URL bar in your browser, to see if there is any tiny alert). For this reason, saving the launcher locally, in a specific folder, will turn beneficial, as permissions granted may refer to a specific location/path and file. 
+									<a href="https://support.google.com/chrome/answer/95472?hl=en&co=GENIE.Platform%3DDesktop" target="_blank"> Chrome</a>, <a href="https://support.mozilla.org/en-US/kb/pop-blocker-settings-exceptions-troubleshooting" target="_blank">Firefox</a></p>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+							<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									Negative News
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionGTK">
+								<div class="accordion-body">
+									<p><strong>Acronyms:</strong> NP: Natural Person, LP: Legal Person.</p>
+									<p><strong>Search environment:</strong> As advised in the official guide, do not forget to clear browser data before starting your NN search. The NN tool also works
+									in Incognito/Private modes (clean environments). In any case, make sure that you follow all browser-required actions before triggering your searches.</p>
+									<p><strong>List:</strong> You can put all names into a list (either into NPs or LPs forms, not those at the bottom), do not use commas or other punctuation, as this would show up into the actual search query.</p>
+									<p><strong>Combos:</strong> All text fields meant for natural persons will return all combinations of the names. For example, Adam Simon Mark Taylor input ; it will return NN searches a. Adam Taylor; b. Adam Simon Mark Taylor; c. Adam Simon / S Taylor; d. Adam Mark / M Taylor, for each language template. </p>
+									<p>Legal persons will instead return the input as a whole, broken down by language. In this sense, please, if you notice any 'human-like' name, say, among Financial Information, enter it among the natural persons fields.</p>
+									<p><strong>Middle Names:</strong> x1 Forename is expected, no limit for midnames. If you type multiple midnames, these will be searched as outlined above. Multiple or multi-word surnames that should be searched 
+									as a whole - i.e. "de la Silva" - go into the "Multiple Surnames" form.</p>
+									<p><strong>Basic Search:</strong> Clicking the "Basic Search" buttons will launch searches for the entities entered in the text fields including the keywords required for each Language Template selected. The search templates also remove hits from some common social media sites that do not provide useful information, reducing the number of websites required to review.</p>
+									<p><strong>Translated Search:</strong> The “Translated Search” search option uses the Google Translate API to automatically translate the search results from the selected Template Language into English. Alternatively, by turning the “Autodetect language translation” option on and then selecting “Translated Search” allows the Google Translate API to detect what language most of the search results are in and translate them into English. This can be useful if most of the results are not in the same language as the Template Language or in English.</p>
+									<p><strong>Language Specific Name Searches:</strong> For certain languages, advice has been given on what name combinations and orders are required in NN searches.</p>
+									<p>Names of Chinese origin generally follow the order of [surname] [name]. Going to “CN Search” allows ensures that names are in the correct order as well as allowing for surnames and personal names with multiple words/syllables.</p>
+									<p>Spanish and Portuguese names generally have 2 surnames with traditionally one coming from their mother and one coming from their father. The orders for names in each language are shown in the table below:</p>
+									<table style="width:100%">
+										<tr>
+											<th style="width:10%"> </th>
+											<th style="width:22.5%">A</th>
+											<th style="width:22.5%">B</th>
+											<th style="width:22.5%">C</th>
+											<th style="width:22.5%">D</th>
+										</tr>
+										<tr>
+											<td><strong>ES</strong></td>
+											<td>Personal Name</td>
+											<td>Middle Name(s)</td>
+											<td>Father’s Surname</td>
+											<td>Mother’s Surname</td>
+										</tr>
+										<tr>
+											<td><strong>PT</strong></td>
+											<td>Personal Name</td>
+											<td>Middle Name(s)</td>
+											<td>Mother’s Surname</td>
+											<td>Father’s Surname</td>
+										</tr>
+									</table>
+									<p>“PT Sobrenomes” will return searches with the name combinations ABCD, ABD and AD (or ACD and AD if no middle names have been provided).</p>
+									<p>Please note, that for “CN Search”, “ES Apellidos” and “PT Sobrenomes” you still need to selected the Template Language, for example, launching a “PT Sobrenomes” search will not automatically select the PT Language Template.</p>
+
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									Special scenarios
+								</button>
+							</h2>
+							<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionGTK">
+								<div class="accordion-body">
+									<p><strong>Multiple surnames: </strong> It is common to find &quot;multi-word&quot; surnames for one person sometimes, i.e. De Laurentis (IT) and i.e. de Borbón (ES).
+									In this case, you need to use the &quot;<strong style="color: blue;">Multiple Surnames</strong>&quot; form: Put the words inside the surname field and perform the NN search.</p>
+									<p><strong>First Apellido and  Second Apellido:</strong> Always double check what is being searched and ask an ES investigator to 
+									confirm the generated search queries, if in doubt (see also &quot;ES naming conventions&quot; via the official guidance). Expected combos: According to ES investigators&#39; advice, 
+									given the search query (Forename:)A, (midnames:) B C, (surnames:) D E, expected combinations will be A B C D E, A D, B D, C D, A D E, B D E, C D E, A B C D, broken down by language. Trigger 
+									this search via the &quot;<strong style="color: blue;">ES Apellidos</strong>&quot; form.</p>
+									<p><strong>CN Swap:</strong> CN names can return different results depending on the name-surname order. Chinese naming conventions put their 
+									surname first and media may follow the same logic.For this reason, perform the search via the &quot;<strong style="color: blue;">CN search</strong>&quot; form, whenever you need to screen a CN name. 
+									For example, having Tianyang (Forename) Zhao (Surname),	the search trigger will return both the forename-surname order, as well as the surname-forename one. 
+									<strong>Note:</strong> No CN middle names expected, except for cases where non-CN middle names are provided, such as the famous entrepreneur [CN] 马云 - 
+									[Pinyin] Ma (Surname) Yun (Name) - aka Jack Ma (Yun); in this last case, feel free to use the normal search functions of NPs, making sure of the name-midname-surname order. In the event that you notice a 
+									CN middle name, please, check the related ID or reach out to an SME to confirm your search queries. Refer to the official guidance as well.</p>
+									<p><strong>Google Captcha:</strong> After triggering a certain number of searches, Google will make sure that you are not a bot. In this scenario, resolve the captcha,
+									close all tabs just opened, and simply re-trigger the search to avoid entering captchas for each search.</p>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFive">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+									Disclaimer
+								</button>
+							</h2>
+							<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionGTK">
+								<div class="accordion-body">
+									<p><strong>This is just a launcher, make good use of it. Results of your queries should always be checked for accuracy.</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+	</body>
+</html>
